@@ -1,4 +1,4 @@
-package com.ks.jacob.util;
+package com.ks.utils.jacob;
 
 import com.jacob.activeX.ActiveXComponent;
 import com.jacob.com.ComThread;

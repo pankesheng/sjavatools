@@ -1,4 +1,4 @@
-package com.ks.barcode;
+package com.ks.utils.barcode;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
