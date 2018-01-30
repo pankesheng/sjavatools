@@ -1,4 +1,4 @@
-package com.ks.utils.gen;
+package com.ks.utils.generator;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

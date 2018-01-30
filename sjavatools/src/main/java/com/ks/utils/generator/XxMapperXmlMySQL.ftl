@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="${packages}.mapper.${modules}.${classes}Mapper">
+<mapper namespace="${packages}.mapper<#if modules!="">.${modules}</#if>.${classes}Mapper">
 	
 	<!-- <cache /> -->
 	
@@ -49,14 +49,14 @@
 	</select>
 	
 	<select id="getTotalRows" resultType="int">
-		SELECT COUNT(*) FROM ${tables}
+		SELECT COUNT(${tables}.id) FROM ${tables}
 		<if test="qbuilder != null">
 			<include refid="qbuilder"/>
 		</if>
 	</select>
 	
 	<select id="findById" resultType="${classes}">
-		SELECT * FROM ${tables} WHERE id = ${r"#"}{id}
+		SELECT ${tables}.* FROM ${tables} WHERE id = ${r"#"}{id}
 	</select>
 	
 	<insert id="insert">
@@ -64,6 +64,15 @@
 			(`id`,<#list fields as f>`${f.name}`,</#list>`ctime`,`utime`)
 		VALUES
 			(${r"#"}{object.id},<#list fields as f>${r"#"}{object.${f.name}},</#list>now(),now())
+	</insert>
+	
+	<insert id="inserts">
+		INSERT INTO ${tables}
+			(`id`,<#list fields as f>`${f.name}`,</#list>`ctime`,`utime`)
+		VALUES
+			<foreach collection="objects" item="object" index="index" separator="," >
+				(${r"#"}{object.id},<#list fields as f>${r"#"}{object.${f.name}},</#list>now(),now())
+			</foreach>
 	</insert>
 	
 	<update id="update">

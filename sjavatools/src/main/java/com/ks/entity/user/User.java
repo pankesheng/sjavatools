@@ -1,4 +1,4 @@
-package com.ks.entity;
+package com.ks.entity.user;
 
 import java.util.Date;
 
@@ -9,8 +9,8 @@ import com.ks.utils.generator.DBTable;
  * @author pks
  * @version 2018年1月12日
  */
-@DBTable(name="t_template",index_unique={"name,birthday"})
-public class Template {
+@DBTable(name="t_usertemplate",index_unique={"name,birthday"})
+public class User {
 	
 	@DBField(type="bigint",length=20,allownull=false,comment="单位id")
 	private Long unitId;
