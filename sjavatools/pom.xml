@@ -289,6 +289,19 @@
 			<version>2.2.3</version>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/com.corundumstudio.socketio/netty-socketio -->
+		<dependency>
+		    <groupId>com.corundumstudio.socketio</groupId>
+		    <artifactId>netty-socketio</artifactId>
+		    <version>1.7.14</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.scalecube/socketio -->
+		<dependency>
+		    <groupId>io.scalecube</groupId>
+		    <artifactId>socketio</artifactId>
+		    <version>2.3.4</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<finalName>sjavatools</finalName>
