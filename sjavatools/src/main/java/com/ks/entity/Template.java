@@ -10,7 +10,7 @@ import com.ks.utils.generator.DBTable;
  * @version 2018年1月12日
  */
 @DBTable(name="t_template",index_unique={"name,birthday"})
-public class Template {
+public class Template { 
 	
 	@DBField(type="bigint",length=20,allownull=false,comment="单位id")
 	private Long unitId;
