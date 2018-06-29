@@ -1,5 +1,6 @@
 package com.ks.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.ks.utils.generator.DBField;
@@ -10,7 +11,12 @@ import com.ks.utils.generator.DBTable;
  * @version 2018年1月12日
  */
 @DBTable(name="t_template",index_unique={"name,birthday"})
-public class Template { 
+public class Template implements Serializable { 
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3048508627730613459L;
 	
 	@DBField(type="bigint",length=20,allownull=false,comment="单位id")
 	private Long unitId;
