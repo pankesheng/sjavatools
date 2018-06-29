@@ -8,6 +8,12 @@
 	<sql id="qbuilder">
 		<where>
 			<if test="qbuilder.id != null">${tables}.`id` = ${r"#"}{qbuilder.id}</if>
+			<if test="qbuilder.idneq!=null"> AND ${tables}.`id` != ${r"#"}{qbuilder.idneq}</if>
+			<if test="qbuilder.ids!=null"> AND ${tables}.`id` in
+				<foreach item="item" index="index" collection="qbuilder.ids" open="(" separator="," close=")" >
+					${r"#"}{item}
+				</foreach>
+			</if>
 			<#list qbuilderList as q>
 			<#if q.oper == "=" || q.oper == "like">
 			<if test="qbuilder.${q.fieldName} != null">AND ${tables}.`${q.fieldName}` ${q.oper} ${r"#"}{qbuilder.${q.fieldName}}</if>
