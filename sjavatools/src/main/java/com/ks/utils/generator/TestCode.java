@@ -40,7 +40,7 @@ public class TestCode {
 	@BeforeClass
 	public static void init() {
 //		 new ClassPathXmlApplicationContext("/resources/application.xml");
-		ApplicationContext context = new FileSystemXmlApplicationContext(TestCode.class.getResource("").getPath()+"application.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext(TestCode.class.getResource("").getPath()+"gen_application.xml");
 		if (context != null) {
 			freemarkerConfig = (MyFreeMarkerConfigurer) context.getBean("freemarkerConfig");
 		}
