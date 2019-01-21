@@ -14,7 +14,7 @@ import org.apache.commons.lang3.math.NumberUtils;
  * @author pks
  *
  */
-public class SIdcardUtil {
+public class SUtilIdcard {
 
 	public static final int IDENTITYCODE_OLD = 15; // 老身份证15位
 	public static final int IDENTITYCODE_NEW = 18; // 新身份证18位
@@ -54,7 +54,7 @@ public class SIdcardUtil {
 		} else {
 			birthDay = code.substring(6, 14);
 		}
-		if (SDateFormatUtil.FormatDate(birthDay)==null) {
+		if (SUtilDateFormat.FormatDate(birthDay)==null) {
 			return false;
 		}
 

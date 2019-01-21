@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  * @author Administrator
  *
  */
-public class SDateFormatUtil {
+public class SUtilDateFormat {
 	private static final HashMap<String, String> dateRegFormat = new HashMap<String, String>();
 	static {
 		dateRegFormat.put("^\\d{1,2}[ /-]\\d{1,2}[ /-]\\d{4}[ ]\\d{1,2}[: ]\\d{1,2}[: ]\\d{1,2}[.].*$", "MM-dd-yyyy-HH-mm-ss");
@@ -45,7 +45,7 @@ public class SDateFormatUtil {
 	
 	public static void main(String[] args) {
 		String str = "2017032915";
-		Date d = SDateFormatUtil.FormatDate(str);
+		Date d = SUtilDateFormat.FormatDate(str);
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(d));
 		
 	}
